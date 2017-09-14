@@ -49,14 +49,14 @@
          />
      <ImageView
          android:id="@+id/image_item_view"
-         android:layout_width="100dp"
+         android:layout_width="120dp"
          android:layout_height="100dp"
          android:layout_below="@+id/linearLayout2"
          android:layout_marginEnd="16dp"
          android:layout_marginRight="16dp"
          android:layout_toLeftOf="@+id/text_item_view"
          android:layout_toStartOf="@+id/text_item_view"
-         android:background="@mipmap/ic_launcher" />
+         android:background="@drawable/chen" />
 
      <LinearLayout
          android:layout_width="wrap_content"

@@ -24,16 +24,16 @@ public class ZCandDLpresenter extends Basepresenter<DLandZCView> {
         model = new RegisterModel();
     }
 
-    public void zhuce(){
-        model.zhuce(new RegisterModel.zhuceclick<DataBean>() {
+    public void denglu(){
+        model.denglu(new RegisterModel.dengluclick<DataBean>() {
             @Override
-            public void zhucechenggong(DataBean bean) {
-                iview.zhucechenggong(bean);
+            public void dengluchenggong(DataBean bean) {
+                iview.dengluchenggong(bean);
             }
 
             @Override
-            public void zhuceshibai(String message) {
-                iview.zhuceshibai(message);
+            public void denglushibai(String message) {
+                iview.denglushibai(message);
             }
         });
     }

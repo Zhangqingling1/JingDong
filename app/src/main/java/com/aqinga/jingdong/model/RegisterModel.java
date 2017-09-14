@@ -3,6 +3,7 @@ package com.aqinga.jingdong.model;
 import android.support.annotation.NonNull;
 
 import com.aqinga.jingdong.model.bean.DataBean;
+import com.aqinga.jingdong.model.bean.DbBean;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -18,8 +19,8 @@ import java.net.URL;
 public class RegisterModel {
     public RegisterModel() {
     }
-    //注册操作
-    public void zhuce(@NonNull final zhuceclick<DataBean> beanzhuceclick){
+    //登录操作
+    public void denglu(@NonNull final dengluclick<DataBean> beandengluclick){
         new Thread(new Runnable() {
 
             private HttpURLConnection connection;
@@ -35,10 +36,12 @@ public class RegisterModel {
                     int code = connection.getResponseCode();
                     if (code==200){
                         DataBean bean = new DataBean("注册成功");
-                        beanzhuceclick.zhucechenggong(bean);
+                        DbBean bean1 = new DbBean();
+
+                        beandengluclick.dengluchenggong(bean);
                     }else {
                         String message = connection.getResponseMessage();
-                        beanzhuceclick.zhuceshibai(message);
+                        beandengluclick.denglushibai(message);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -46,8 +49,8 @@ public class RegisterModel {
             }
         }).start();
     }
-    public interface zhuceclick<T>{
-        void  zhucechenggong(DataBean bean);
-        void zhuceshibai(String message);
+    public interface dengluclick<T>{
+        void  dengluchenggong(DataBean bean);
+        void denglushibai(String message);
     }
 }

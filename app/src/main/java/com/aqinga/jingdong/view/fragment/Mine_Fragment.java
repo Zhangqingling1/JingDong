@@ -69,8 +69,8 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        SharedPreferences key = getActivity().getSharedPreferences("key", Context.MODE_PRIVATE);
-        String tu = key.getString("tu", "http://pic.qqtn.com/up/2016-2/2016021809462323636.jpg");
+    SharedPreferences key = getActivity().getSharedPreferences("key", Context.MODE_PRIVATE);
+    String tu = key.getString("tu", "http://pic.qqtn.com/up/2016-2/2016021809462323636.jpg");
         Glide.with(getActivity()).load(tu).into(image);
-    }
+}
 }

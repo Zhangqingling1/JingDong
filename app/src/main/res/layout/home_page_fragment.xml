@@ -1,113 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="230dp">
-    </com.youth.banner.Banner>
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/a_n"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
         android:layout_toLeftOf="@+id/lin_scanner"
         android:layout_toStartOf="@+id/lin_scanner"
-        android:layout_marginTop="12dp" />
+        android:src="@drawable/a_n" />
 
-        <LinearLayout
-                android:id="@+id/lin_scanner"
-                android:layout_width="wrap_content"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:background="@drawable/atj"
-                android:orientation="horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="-2dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/as6" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-2dp"
-                android:layout_weight="1"
-                android:text="欧莱雅美丽盛典，爆款低至2折"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="27dp"
-                android:layout_height="27dp"
-                android:layout_marginTop="-2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="30dp"
-                android:src="@drawable/as1" />
-        </LinearLayout>
-    <ImageView
-        android:id="@+id/image_xinxi"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/as2"
-        android:layout_alignTop="@+id/imageView3"
-        android:layout_toRightOf="@+id/lin_scanner"
-        android:layout_toEndOf="@+id/lin_scanner" />
-    <ImageView
-        android:id="@+id/tu"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/shishang"
-        android:layout_below="@+id/banner"/>
-<LinearLayout
-    android:id="@+id/pager_view"
-    android:layout_width="match_parent"
-    android:layout_below="@+id/tu"
-    android:layout_height="160dp"
-    android:orientation="vertical">
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_below="@+id/tu">
-    </android.support.v4.view.ViewPager>
-</LinearLayout>
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_below="@+id/pager_view"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center"
+    <LinearLayout
+        android:id="@+id/lin_scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:background="@drawable/atj"
         android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/radio_button1"
-            android:checked="true"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:clickable="false"
-            />
-        <RadioButton
-            android:id="@+id/radio_button2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:clickable="false"
-            />
-    </RadioGroup>
-    <ImageView
-        android:layout_below="@+id/radio_group"
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-2dp"
+            android:src="@drawable/as6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-2dp"
+            android:layout_weight="1"
+            android:text="欧莱雅美丽盛典，爆款低至2折"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="-2dp"
+            android:src="@drawable/as1" />
+        <ImageView
+            android:id="@+id/image_xinxi"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_toEndOf="@+id/lin_scanner"
+            android:layout_toRightOf="@+id/lin_scanner"
+            android:src="@drawable/as2" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@+id/lin_scanner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/b07"/>
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_alignEnd="@+id/image_xinxi"
+                android:layout_alignRight="@+id/image_xinxi"
+                android:layout_below="@+id/lin_scanner"></com.youth.banner.Banner>
+
+            <ImageView
+                android:id="@+id/tu"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/banner"
+                android:background="@drawable/shishang" />
+
+            <LinearLayout
+                android:id="@+id/pager_view"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_below="@+id/tu"
+                android:orientation="vertical">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_below="@+id/tu"></android.support.v4.view.ViewPager>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/pager_view"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_button1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:checked="true"
+                    android:clickable="false" />
+
+                <RadioButton
+                    android:id="@+id/radio_button2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:clickable="false" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/b07" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/b07" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/b07" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/b07" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
 
 </RelativeLayout>

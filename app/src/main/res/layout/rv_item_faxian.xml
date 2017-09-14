@@ -11,18 +11,40 @@
         <android.support.v7.widget.CardView
             android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="230dp"
             app:contentPaddingTop="0dp"
             app:cardCornerRadius="10dp"
-            app:cardBackgroundColor="#ffc8b4"
             app:cardMaxElevation="8dp">
+                <TextView
+                    android:gravity="center"
+                    tools:text="TEXT"
+                    android:textColor="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/faxian_tu"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/jsbundles_jdreactintlbrand_images_brand_enter_advance_bg"/>
                 <TextView
                     android:gravity="center"
                     android:id="@+id/tv_content"
                     tools:text="TEXT"
-                    android:layout_gravity="center"
+                    android:textColor="#000000"
+                    android:layout_marginTop="130dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/shijian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时间"
+                    android:textSize="12dp"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginRight="30dp"
+                    android:textColor="#ff0000"
+                    android:layout_gravity="right"/>
         </android.support.v7.widget.CardView>
 
 

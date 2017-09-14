@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/imageView3"
@@ -58,6 +60,50 @@
         android:layout_alignTop="@+id/imageView3"
         android:layout_toRightOf="@+id/lin_scanner"
         android:layout_toEndOf="@+id/lin_scanner" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
+        <RelativeLayout
+            android:id="@+id/jzfw_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:gravity="center_vertical" >
+        </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fbfbfb"
+            android:orientation="horizontal">
+
+            <q.rorbin.verticaltablayout.VerticalTabLayout
+                android:id="@+id/tablayout_vertical"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                app:tab_mode="scrollable"
+                android:background="#EDEDED"
+                app:tab_height="90dp"
+                app:indicator_color="#FFFFFF"
+                app:indicator_gravity="fill"
+                />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#cdcdcd" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vertical_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

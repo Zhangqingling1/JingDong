@@ -3,12 +3,14 @@ package com.aqinga.jingdong.app;
 import android.app.Application;
 import android.content.Context;
 
+import com.nostra13.universalimageloader.BuildConfig;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.utils.Log;
@@ -34,6 +36,8 @@ public class App extends Application {
         appcontext = this;
         UMShareAPI.get(this);
         initImageLoader(getApplicationContext());
+        CrashReport.initCrashReport(getApplicationContext(), "680861abc7", BuildConfig.DEBUG);
+
     }
     public static Context appcontext(){
         return appcontext;

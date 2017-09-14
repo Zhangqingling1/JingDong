@@ -9,11 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aqinga.jingdong.R;
+import com.aqinga.jingdong.model.bean.FaXianBean;
+import com.aqinga.jingdong.model.utils.OkHttpUtils;
 import com.aqinga.jingdong.view.adapter.FaXianAdapter;
+import com.google.gson.Gson;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Created by
@@ -39,17 +47,33 @@ public class MytabFragment extends Fragment implements XRecyclerView.LoadingList
         xrecyclerview=(XRecyclerView) view.findViewById(R.id.faxianxrecyclerview);
         LinearLayoutManager linearlayoutmanager = new LinearLayoutManager(getContext());
         xrecyclerview.setLayoutManager(linearlayoutmanager);
-        adapter = new FaXianAdapter(list,getContext());
-        xrecyclerview.setAdapter(adapter);
         xrecyclerview.setLoadingListener(this);
 
         return view;
     }
 
     private void init() {
-        for (int i = 0; i < 5; i++) {
-            list.add("第"+i+"条");
-        }
+        OkHttpUtils.sendOkHttpRequest("http://api.jisuapi.com/news/get?channel=%E5%A4%B4%E6%9D%A1&start=0&num=10&appkey=f8aad9299757d186", new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String json = response.body().string();
+                Gson gson = new Gson();
+                FaXianBean faXianBean = gson.fromJson(json, FaXianBean.class);
+                final List<FaXianBean.ResultBean.ListBean> listbean = faXianBean.getResult().getList();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter = new FaXianAdapter(listbean,getActivity());
+                        xrecyclerview.setAdapter(adapter);
+                    }
+                });
+            }
+        });
     }
 
     @Override

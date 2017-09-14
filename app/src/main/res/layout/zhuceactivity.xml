@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="京东注册"
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:layout_marginTop="9dp"
+        android:textSize="20dp"
+        android:textColor="#757575"
+        android:layout_marginLeft="10dp"
+        android:text="账号:"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edit_text1_zhuce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:hint="用户名/邮箱/手机号" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text1"
+        android:textSize="20dp"
+        android:textColor="#757575"
+        android:layout_marginTop="27dp"
+        android:layout_marginLeft="10dp"
+        android:text="密码:"/>
+    <EditText
+        android:id="@+id/edit_text2_zhuce"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text1"
+        android:layout_alignLeft="@+id/edit_text1"
+        android:layout_alignStart="@+id/edit_text1"
+        android:layout_marginLeft="18dp"
+        android:hint="请输入密码"/>
+    <Button
+        android:id="@+id/but_zhuce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="注册"
+        android:onClick="zhuce"
+        android:background="#E1E1E3"
+        android:textColor="#ADADAD"
+        android:layout_below="@+id/edit_text2"/>
+</LinearLayout>

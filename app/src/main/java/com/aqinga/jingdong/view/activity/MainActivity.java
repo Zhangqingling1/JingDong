@@ -11,11 +11,11 @@ import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
 import com.aqinga.jingdong.R;
-import com.aqinga.jingdong.view.fragment.Home_Page_Fragment;
 import com.aqinga.jingdong.view.fragment.Classify_Fragment;
 import com.aqinga.jingdong.view.fragment.Discover_Fragment;
-import com.aqinga.jingdong.view.fragment.Shopping_cartFragment;
+import com.aqinga.jingdong.view.fragment.Home_Page_Fragment;
 import com.aqinga.jingdong.view.fragment.Mine_Fragment;
+import com.aqinga.jingdong.view.fragment.Shopping_cartFragment;
 
 import java.util.ArrayList;
 

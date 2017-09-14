@@ -2,51 +2,54 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/gou"
+    android:gravity="center"
+    >
+
+    <include layout="@layout/header_layout"
+        />
+
+    <RelativeLayout
+        android:id="@+id/id_rl_cart_is_empty"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:background="#FCFCFC"
         android:gravity="center"
-        >
-        <TextView
+        android:layout_marginTop="48dp"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/id_rl_cart_is_empty_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="购物车"
-            android:textSize="30dp"
-            android:textColor="#000000"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
-    </LinearLayout>
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-         android:id="@+id/gouwucheview"
-         android:layout_below="@id/gou"
-         android:layout_width="match_parent"
-         android:layout_height="650dp">
-     </com.jcodecraeer.xrecyclerview.XRecyclerView>
-    <CheckBox
-        android:id="@+id/quanxuan"
-        android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/ic_shopping_cart_empty"/>
+        <TextView
+            android:id="@+id/id_rl_cart_is_empty_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/id_rl_cart_is_empty_image"
+            android:layout_marginTop="10dp"
+            android:text="购物车为空"/>
+    </RelativeLayout>
+    <ExpandableListView
+        android:id="@+id/id_elv_listview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="全选"
-        android:layout_alignParentBottom="true"/>
-    <TextView
-        android:id="@+id/text_heji"
-        android:layout_width="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="#ebebeb"
+        android:groupIndicator="@null"
+        android:dividerHeight="2dp"
+        android:footerDividersEnabled="false"
+        android:visibility="visible"
+        >
+    </ExpandableListView>
+
+
+    <include
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="合计：￥0.00"
-        android:layout_marginLeft="40dp"
-        android:layout_alignBaseline="@+id/quanxuan"
-        android:layout_alignBottom="@+id/quanxuan"
-        android:layout_toRightOf="@+id/quanxuan"
-        android:layout_toEndOf="@+id/quanxuan"
-        android:layout_marginStart="40dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="去结算(0)"
-        android:background="#F23030"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        layout="@layout/foot_layout"
+        />
+
 </RelativeLayout>

@@ -11,6 +11,6 @@ import com.aqinga.jingdong.model.bean.DataBean;
  */
 
 public interface DLandZCView<T> extends IView {
-    void zhucechenggong(DataBean bean);
-    void  zhuceshibai(String message);
+    void dengluchenggong(DataBean bean);
+    void  denglushibai(String message);
 }

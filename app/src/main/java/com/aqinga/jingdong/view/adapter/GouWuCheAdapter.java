@@ -49,7 +49,7 @@ public class GouWuCheAdapter extends XRecyclerView.Adapter<GouWuCheAdapter.ViewH
         this.setOnItemLongClickListener = myOnItemLongClickListener;
     }
     //全选
-    public void SelectedAll(){
+    public Set<Map.Entry<Integer, Boolean>> SelectedAll(){
         Set<Map.Entry<Integer, Boolean>> entries = ishashmap.entrySet();
         boolean showhashmap = false;
         for (Map.Entry<Integer, Boolean> entry: entries) {
@@ -63,6 +63,7 @@ public class GouWuCheAdapter extends XRecyclerView.Adapter<GouWuCheAdapter.ViewH
             entry.setValue(showhashmap);
         }
         notifyDataSetChanged();
+        return entries;
     }
     //反选
     public void SelectedRever(){

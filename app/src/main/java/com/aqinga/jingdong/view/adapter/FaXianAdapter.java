@@ -1,16 +1,19 @@
 package com.aqinga.jingdong.view.adapter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aqinga.jingdong.R;
+import com.aqinga.jingdong.model.bean.FaXianBean;
 import com.aqinga.jingdong.view.activity.ItemActivity;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -24,10 +27,10 @@ import java.util.List;
 
 public class FaXianAdapter extends XRecyclerView.Adapter<FaXianAdapter.ViewHolder> {
 
-    List<String> list;
-    Context context;
+    List<FaXianBean.ResultBean.ListBean> list;
+    Activity context;
 
-    public FaXianAdapter(List<String> list, Context context) {
+    public FaXianAdapter(List<FaXianBean.ResultBean.ListBean> list, Activity context) {
         this.list = list;
         this.context = context;
     }
@@ -40,7 +43,9 @@ public class FaXianAdapter extends XRecyclerView.Adapter<FaXianAdapter.ViewHolde
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textview.setText(list.get(position));
+        holder.textview.setText(list.get(position).getTitle());
+        ImageLoader.getInstance().displayImage(list.get(position).getPic(),holder.image);
+        holder.shijian.setText(list.get(position).getTime());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,11 +63,15 @@ public class FaXianAdapter extends XRecyclerView.Adapter<FaXianAdapter.ViewHolde
     class ViewHolder extends XRecyclerView.ViewHolder{
         TextView textview;
         private final CardView card;
+        private final TextView shijian;
+        private final ImageView image;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textview= (TextView) itemView.findViewById(R.id.tv_content);
             card = (CardView) itemView.findViewById(R.id.card_view);
+            image = (ImageView) itemView.findViewById(R.id.faxian_tu);
+            shijian = (TextView) itemView.findViewById(R.id.shijian);
         }
     }
 }
